@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Time Search Analytics</title>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <h1>Real Time Search Analytics</h1>
+
+  <input type="text" id="searchInput" placeholder="Search articles..." oninput="handleSearch()">
+
+  <div id="searchResults"></div>
+
+  <script>
+    const handleSearch = () => {
+      var query = document.getElementById('searchInput').value;
+
+      // Send AJAX request to the server to record the search
+      if (query.length > 0) {
+        fetch('/query', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+          },
+          body: JSON.stringify({ query: query })
+        })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
+      }
+
+      // Implement search functionality as needed and update the results
+      // For simplicity, we'll just display the query as the result
+      document.getElementById('searchResults').innerText = query;
+    }
+  </script>
+</body>
+</html>
