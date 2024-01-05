@@ -14,27 +14,26 @@
   <div id="searchResults"></div>
 
   <script>
+
     const handleSearch = () => {
-      var query = document.getElementById('searchInput').value;
+      let Input = document.getElementById('searchInput').value;
 
-      // Send AJAX request to the server to record the search
-      if (query.length > 0) {
-        fetch('/query', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-          },
-          body: JSON.stringify({ query: query })
-        })
-          .then(response => response.json())
-          .then(data => console.log(data))
-          .catch(error => console.error('Error:', error));
-      }
+        if (Input.length > 0) {
+          fetch('/query', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+            },
+            body: JSON.stringify({ query: Input })
+          })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        }
 
-      // Implement search functionality as needed and update the results
-      // For simplicity, we'll just display the query as the result
-      document.getElementById('searchResults').innerText = query;
+      //Display the query as the result for checking purpose
+      document.getElementById('searchResults').innerText = Input;
     }
   </script>
 </body>
