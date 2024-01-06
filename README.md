@@ -44,7 +44,7 @@
 - Search History
 
 ### Live Demo <a name="Live-demo"></a>
-[Open Live demo](coming)
+[Open Live demo](https://real-time-search-analytics-3dda18ead592.herokuapp.com)
 
 ### Video Presentation <a name="video-presentation"></a>
 [Video Presentation](coming)
