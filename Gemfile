@@ -71,3 +71,8 @@ group :test do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'clockwork'
+
+gem 'dotenv-rails'
+gem 'tailwindcss-rails', '~> 2.2'

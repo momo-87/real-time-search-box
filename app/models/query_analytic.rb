@@ -1,0 +1,2 @@
+class QueryAnalytic < ApplicationRecord
+end
