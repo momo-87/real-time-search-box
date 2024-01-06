@@ -11,7 +11,7 @@ class SearchController < ApplicationController
     ip_address = request.remote_ip
 
     # Save the search query and IP address to the database
-    QueryAnalytic.create(query: query, ip_address: ip_address)
+    QueryAnalytic.create(query:, ip_address:)
 
     render json: { message: 'Search recorded successfully' }
   end
