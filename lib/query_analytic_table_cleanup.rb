@@ -1,12 +1,12 @@
-# Purpose: This class is used to clean up the query_analytics table. 
-#It will remove any incompleted queries. 
-#For example, the query "what is" is contained within the query "what is a good car", then will be removed.
+# Purpose: This class is used to clean up the query_analytics table.
+# It will remove any incompleted queries.
+# For example, the query "what is" is contained within the query "what is a good car", then will be removed.
 # Usage: QueryAnalyticTableCleanup.cleanup
 
 class QueryAnalyticTableCleanup
   def self.cleanup
     queries = QueryAnalytic.order(:ip_address, updated_at: :desc)
-  
+
     queries_to_destroy = []
 
     queries.each_cons(2) do |current_query, next_query|
@@ -20,6 +20,6 @@ class QueryAnalyticTableCleanup
     end
 
     # Destroy the queries after the iteration
-      queries_to_destroy.each(&:destroy)
+    queries_to_destroy.each(&:destroy)
   end
 end

@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   before_action :sanitize_query, only: [:search]
-  
+
   def index
     @query_analytics = QueryAnalytic.where(complete: true).order(:updated_at)
   end
@@ -16,7 +16,6 @@ class SearchController < ApplicationController
     render json: { message: 'Search recorded successfully' }
   end
 
-
   private
 
   def sanitize_query
@@ -26,5 +25,4 @@ class SearchController < ApplicationController
   def query_params
     params.require(:query_analytics).permit(:query)
   end
-
 end
