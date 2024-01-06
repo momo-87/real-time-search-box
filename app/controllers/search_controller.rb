@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   before_action :sanitize_query, only: [:search]
   
   def index
-    @query_analytics = QueryAnalytic.all
+    @query_analytics = QueryAnalytic.where(complete: true).order(:updated_at)
   end
 
   def search
@@ -18,7 +18,7 @@ class SearchController < ApplicationController
 
 
   private
-  
+
   def sanitize_query
     params[:query] = params[:query].to_s.strip
   end
@@ -26,4 +26,5 @@ class SearchController < ApplicationController
   def query_params
     params.require(:query_analytics).permit(:query)
   end
+
 end
