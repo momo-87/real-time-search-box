@@ -19,12 +19,12 @@
       <%= link_to 'Refresh', root_path, class: "font-medium text-blue-600 underline hover:no-underline" %>
     </div>
     
-    <div class="grid grid-cols-12 grid-rows-1 grid-flow-row border-2 border-black mt-2">
+    <div class="grid md:grid-cols-12 grid-cols-10 grid-rows-1 grid-flow-row border-2 border-black mt-2">
       <div class="font-extrabold bg-gray-400 border-r-2 border-black px-3 col-span-1">N°</div>
-      <div class="font-extrabold bg-gray-400 border-r-2 border-black px-3 col-span-11">Search Items</div>
+      <div class="font-extrabold bg-gray-400 border-r-2 border-black px-3 md:col-span-11 col-span-9">Search Items</div>
       <% @query_analytics.each_with_index do |query, index| %>
         <div class="border-r-2 border-black px-3 col-span-1"><%= index + 1 %></div>
-        <div class="border-r-2 border-black px-3 col-span-11"><%= query.query %></div>
+        <div class="border-r-2 border-black px-3 md:col-span-11 col-span-9"><%= query.query %></div>
       <% end %>
     </div>
 
@@ -35,22 +35,20 @@
     const handleSearch = () => {
       let Input = document.getElementById('searchInput').value;
 
-        if (Input.length > 0) {
-          fetch('/query', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-            },
-            body: JSON.stringify({ query: Input })
-          })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
-        }
+      if (Input.length > 0) {
+        fetch('/query', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+          },
+          body: JSON.stringify({ query: Input })
+        })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
+      }
 
-      //Display the query as the result for checking purpose
-      document.getElementById('searchResults').innerText = Input;
     }
   </script>
 </body>
