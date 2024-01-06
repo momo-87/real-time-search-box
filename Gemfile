@@ -78,3 +78,5 @@ gem 'dotenv-rails'
 gem 'tailwindcss-rails', '~> 2.2'
 
 gem 'rspec-rails'
+
+gem 'rails-controller-testing'

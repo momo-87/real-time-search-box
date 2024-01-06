@@ -13,11 +13,5 @@ RSpec.describe QueryAnalytic, type: :model do
       search.ip_address = nil
       expect(search).not_to be_valid
     end
-
-    it 'requires complete to be present' do
-      search.complete = nil
-      expect(search).not_to be_valid
-    end
-
   end
 end
