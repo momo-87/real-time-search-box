@@ -5,7 +5,7 @@
 
 class QueryAnalyticTableCleanup
   def self.cleanup
-    queries = QueryAnalytic.order(updated_at: :desc)
+    queries = QueryAnalytic.order(:ip_address, updated_at: :desc)
   
     queries_to_destroy = []
 
