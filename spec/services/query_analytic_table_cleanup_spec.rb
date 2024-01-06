@@ -10,7 +10,7 @@ RSpec.describe QueryAnalyticTableCleanup, type: :service do
       # Trigger the cleanup process
       described_class.cleanup
 
-      # waiting interval 
+      # waiting interval
       sleep(3)
 
       # Expectations

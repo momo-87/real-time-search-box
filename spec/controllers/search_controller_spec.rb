@@ -13,7 +13,7 @@ RSpec.describe SearchController, type: :controller do
       completed_queries = [
         QueryAnalytic.create!(query: 'Example Query 1', ip_address: '127.0.0.1', complete: true),
         QueryAnalytic.create!(query: 'Example Query 2', ip_address: '127.0.0.1', complete: true),
-        QueryAnalytic.create!(query: 'Example Query 3', ip_address:'127.0.0.1', complete: true)
+        QueryAnalytic.create!(query: 'Example Query 3', ip_address: '127.0.0.1', complete: true)
       ]
 
       get :index
@@ -23,9 +23,9 @@ RSpec.describe SearchController, type: :controller do
 
   describe 'POST #search' do
     it 'creates a new query analytic record' do
-      expect {
-        post :search, params: { query: 'Test Query'}
-      }.to change(QueryAnalytic, :count).by(1)
+      expect do
+        post :search, params: { query: 'Test Query' }
+      end.to change(QueryAnalytic, :count).by(1)
 
       expect(response).to have_http_status(:success)
     end
