@@ -47,7 +47,7 @@
 [Open Live demo](https://real-time-search-analytics-3dda18ead592.herokuapp.com)
 
 ### Video Presentation <a name="video-presentation"></a>
-[Video Presentation](coming)
+[Video Presentation](https://www.loom.com/share/7cb44630e59946bda7220a78496b5a89?sid=b4a6dcdb-ffad-448b-ba1d-3ea452eb6069)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -74,7 +74,7 @@ Clone this repository to your desired folder:
   - PASSWORD
 - Install the required gem libraries by running: `bundle install`
 - To start the project, run: `rails s`
-- To start the background processes, run: `bundle exec clockwork lib/clock.rb`
+- To start the background processes, run: `bundle exec clockwork lib/cleanup_schedule.rb`
 
 ### Run tests
 - Use the folling command to run the RSpec tests: `rspec spec`
