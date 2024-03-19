@@ -90,7 +90,7 @@ Clone this repository to your desired folder:
 
 
 ## 🔭 Future Features <a name="future-features"></a>
-- [ ] Improving scalobolity
+- [ ] Improving scalability
 - [ ] improving styling
 
 
