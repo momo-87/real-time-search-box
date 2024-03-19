@@ -103,7 +103,7 @@ Feel free to check the [issues page](https://github.com/momo-87/real-time-search
 If you like this project, give it a star and share it.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-I would like to thank [Emil Hajric](https://www.linkedin.com/in/emilhajric/), CEO at [Helpjuice](https://helpjuice.com/?gclid=Cj0KCQiAkeSsBhDUARIsAK3tiedMPlP90D6o61eH_8g8eVm8M4LEg9bAyI1VhyETdQ5omf8b0CAFksoaAhdzEALw_wcB) for giving me the opportunity to take to work on this project.
+I would like to thank [Emil Hajric](https://www.linkedin.com/in/emilhajric/), CEO at [Helpjuice](https://helpjuice.com/?gclid=Cj0KCQiAkeSsBhDUARIsAK3tiedMPlP90D6o61eH_8g8eVm8M4LEg9bAyI1VhyETdQ5omf8b0CAFksoaAhdzEALw_wcB) for giving me the opportunity to work on this project.
 
 
 ## 📝 License <a name="license"></a>
